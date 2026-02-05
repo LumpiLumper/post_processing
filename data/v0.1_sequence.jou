@@ -1,0 +1,709 @@
+; 2047
+/file/read-case-data "C:/Jon/BFH/BRT/26/Aero/CFD/New_side_V1/New_side_V1.cas.h5"
+            /file/set-batch-options no yes yes no
+            /display/set-window 1
+            /views/camera/projection orthographic
+            /views/apply-mirror-planes symmetry ()
+            
+            /report/forces/wall-forces yes 0 0 1 yes df.csv
+            /report/forces/wall-forces yes 1 0 0 yes drag.csv
+
+            /display/surface/iso-surface velocity velo_iso () () 5 ()
+            /display/set/contours surfaces velo_iso ()
+            /display/contour/pressure -600 100
+            /views/auto-scale   
+            /views/camera/target 0.5 0.1 0
+            /views/camera/position 0.5 0.1 -1
+            /views/camera/up-vector 0 1 0
+            /views/camera/zoom-camera 1.5
+            /display/save-picture "Processed/images/bottom_iso.png"
+
+            /display/display/surface-mesh symmetry()
+            /views/camera/target 0.4 0 1
+            /views/camera/position 0.4 1 1
+            /views/camera/up-vector 0 0 1   
+            
+                ; --- Image 1/30 at Z = 0.0000 ---
+                /surface/plane-surface plane_z_00 z 0.0000
+                /display/set/contours surfaces plane_z_00 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_00.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_00.png"
+                /surface/delete plane_z_00
+                
+                ; --- Image 2/30 at Z = 0.0262 ---
+                /surface/plane-surface plane_z_01 z 0.0262
+                /display/set/contours surfaces plane_z_01 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_01.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_01.png"
+                /surface/delete plane_z_01
+                
+                ; --- Image 3/30 at Z = 0.0524 ---
+                /surface/plane-surface plane_z_02 z 0.0524
+                /display/set/contours surfaces plane_z_02 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_02.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_02.png"
+                /surface/delete plane_z_02
+                
+                ; --- Image 4/30 at Z = 0.0786 ---
+                /surface/plane-surface plane_z_03 z 0.0786
+                /display/set/contours surfaces plane_z_03 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_03.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_03.png"
+                /surface/delete plane_z_03
+                
+                ; --- Image 5/30 at Z = 0.1048 ---
+                /surface/plane-surface plane_z_04 z 0.1048
+                /display/set/contours surfaces plane_z_04 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_04.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_04.png"
+                /surface/delete plane_z_04
+                
+                ; --- Image 6/30 at Z = 0.1310 ---
+                /surface/plane-surface plane_z_05 z 0.1310
+                /display/set/contours surfaces plane_z_05 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_05.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_05.png"
+                /surface/delete plane_z_05
+                
+                ; --- Image 7/30 at Z = 0.1572 ---
+                /surface/plane-surface plane_z_06 z 0.1572
+                /display/set/contours surfaces plane_z_06 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_06.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_06.png"
+                /surface/delete plane_z_06
+                
+                ; --- Image 8/30 at Z = 0.1834 ---
+                /surface/plane-surface plane_z_07 z 0.1834
+                /display/set/contours surfaces plane_z_07 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_07.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_07.png"
+                /surface/delete plane_z_07
+                
+                ; --- Image 9/30 at Z = 0.2097 ---
+                /surface/plane-surface plane_z_08 z 0.2097
+                /display/set/contours surfaces plane_z_08 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_08.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_08.png"
+                /surface/delete plane_z_08
+                
+                ; --- Image 10/30 at Z = 0.2359 ---
+                /surface/plane-surface plane_z_09 z 0.2359
+                /display/set/contours surfaces plane_z_09 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_09.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_09.png"
+                /surface/delete plane_z_09
+                
+                ; --- Image 11/30 at Z = 0.2621 ---
+                /surface/plane-surface plane_z_10 z 0.2621
+                /display/set/contours surfaces plane_z_10 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_10.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_10.png"
+                /surface/delete plane_z_10
+                
+                ; --- Image 12/30 at Z = 0.2883 ---
+                /surface/plane-surface plane_z_11 z 0.2883
+                /display/set/contours surfaces plane_z_11 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_11.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_11.png"
+                /surface/delete plane_z_11
+                
+                ; --- Image 13/30 at Z = 0.3145 ---
+                /surface/plane-surface plane_z_12 z 0.3145
+                /display/set/contours surfaces plane_z_12 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_12.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_12.png"
+                /surface/delete plane_z_12
+                
+                ; --- Image 14/30 at Z = 0.3407 ---
+                /surface/plane-surface plane_z_13 z 0.3407
+                /display/set/contours surfaces plane_z_13 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_13.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_13.png"
+                /surface/delete plane_z_13
+                
+                ; --- Image 15/30 at Z = 0.3669 ---
+                /surface/plane-surface plane_z_14 z 0.3669
+                /display/set/contours surfaces plane_z_14 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_14.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_14.png"
+                /surface/delete plane_z_14
+                
+                ; --- Image 16/30 at Z = 0.3931 ---
+                /surface/plane-surface plane_z_15 z 0.3931
+                /display/set/contours surfaces plane_z_15 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_15.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_15.png"
+                /surface/delete plane_z_15
+                
+                ; --- Image 17/30 at Z = 0.4193 ---
+                /surface/plane-surface plane_z_16 z 0.4193
+                /display/set/contours surfaces plane_z_16 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_16.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_16.png"
+                /surface/delete plane_z_16
+                
+                ; --- Image 18/30 at Z = 0.4455 ---
+                /surface/plane-surface plane_z_17 z 0.4455
+                /display/set/contours surfaces plane_z_17 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_17.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_17.png"
+                /surface/delete plane_z_17
+                
+                ; --- Image 19/30 at Z = 0.4717 ---
+                /surface/plane-surface plane_z_18 z 0.4717
+                /display/set/contours surfaces plane_z_18 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_18.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_18.png"
+                /surface/delete plane_z_18
+                
+                ; --- Image 20/30 at Z = 0.4979 ---
+                /surface/plane-surface plane_z_19 z 0.4979
+                /display/set/contours surfaces plane_z_19 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_19.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_19.png"
+                /surface/delete plane_z_19
+                
+                ; --- Image 21/30 at Z = 0.5241 ---
+                /surface/plane-surface plane_z_20 z 0.5241
+                /display/set/contours surfaces plane_z_20 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_20.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_20.png"
+                /surface/delete plane_z_20
+                
+                ; --- Image 22/30 at Z = 0.5503 ---
+                /surface/plane-surface plane_z_21 z 0.5503
+                /display/set/contours surfaces plane_z_21 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_21.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_21.png"
+                /surface/delete plane_z_21
+                
+                ; --- Image 23/30 at Z = 0.5766 ---
+                /surface/plane-surface plane_z_22 z 0.5766
+                /display/set/contours surfaces plane_z_22 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_22.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_22.png"
+                /surface/delete plane_z_22
+                
+                ; --- Image 24/30 at Z = 0.6028 ---
+                /surface/plane-surface plane_z_23 z 0.6028
+                /display/set/contours surfaces plane_z_23 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_23.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_23.png"
+                /surface/delete plane_z_23
+                
+                ; --- Image 25/30 at Z = 0.6290 ---
+                /surface/plane-surface plane_z_24 z 0.6290
+                /display/set/contours surfaces plane_z_24 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_24.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_24.png"
+                /surface/delete plane_z_24
+                
+                ; --- Image 26/30 at Z = 0.6552 ---
+                /surface/plane-surface plane_z_25 z 0.6552
+                /display/set/contours surfaces plane_z_25 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_25.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_25.png"
+                /surface/delete plane_z_25
+                
+                ; --- Image 27/30 at Z = 0.6814 ---
+                /surface/plane-surface plane_z_26 z 0.6814
+                /display/set/contours surfaces plane_z_26 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_26.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_26.png"
+                /surface/delete plane_z_26
+                
+                ; --- Image 28/30 at Z = 0.7076 ---
+                /surface/plane-surface plane_z_27 z 0.7076
+                /display/set/contours surfaces plane_z_27 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_27.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_27.png"
+                /surface/delete plane_z_27
+                
+                ; --- Image 29/30 at Z = 0.7338 ---
+                /surface/plane-surface plane_z_28 z 0.7338
+                /display/set/contours surfaces plane_z_28 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_28.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_28.png"
+                /surface/delete plane_z_28
+                
+                ; --- Image 30/30 at Z = 0.7600 ---
+                /surface/plane-surface plane_z_29 z 0.7600
+                /display/set/contours surfaces plane_z_29 ()
+                /display/contour/velocity-magnitude 0 35   
+                /display/save-picture "Processed/Images/side_vel/side_vel_29.png"
+                /display/contour/total-pressure -300 350
+                /display/save-picture "Processed/Images/side_pressure/side_pressure_29.png"
+                /surface/delete plane_z_29
+                
+            views/apply-mirror-planes symmetry ()
+            /display/display/surface-mesh Inlet()
+            /views/auto-scale
+            /views/camera/target 0 0 0.8
+            /views/camera/position 1 0 0.8
+            /views/camera/up-vector 0 0 1
+            /views/camera/zoom-camera 4
+            
+                ; --- Image 1/45 at x = -1.2500 ---
+                /surface/plane-surface plane_x_00 y -1.2500
+                /display/set/contours surfaces plane_x_00 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_00.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_00.png"
+                /surface/delete plane_x_00
+                
+                ; --- Image 2/45 at x = -1.1795 ---
+                /surface/plane-surface plane_x_01 y -1.1795
+                /display/set/contours surfaces plane_x_01 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_01.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_01.png"
+                /surface/delete plane_x_01
+                
+                ; --- Image 3/45 at x = -1.1091 ---
+                /surface/plane-surface plane_x_02 y -1.1091
+                /display/set/contours surfaces plane_x_02 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_02.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_02.png"
+                /surface/delete plane_x_02
+                
+                ; --- Image 4/45 at x = -1.0386 ---
+                /surface/plane-surface plane_x_03 y -1.0386
+                /display/set/contours surfaces plane_x_03 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_03.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_03.png"
+                /surface/delete plane_x_03
+                
+                ; --- Image 5/45 at x = -0.9682 ---
+                /surface/plane-surface plane_x_04 y -0.9682
+                /display/set/contours surfaces plane_x_04 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_04.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_04.png"
+                /surface/delete plane_x_04
+                
+                ; --- Image 6/45 at x = -0.8977 ---
+                /surface/plane-surface plane_x_05 y -0.8977
+                /display/set/contours surfaces plane_x_05 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_05.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_05.png"
+                /surface/delete plane_x_05
+                
+                ; --- Image 7/45 at x = -0.8273 ---
+                /surface/plane-surface plane_x_06 y -0.8273
+                /display/set/contours surfaces plane_x_06 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_06.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_06.png"
+                /surface/delete plane_x_06
+                
+                ; --- Image 8/45 at x = -0.7568 ---
+                /surface/plane-surface plane_x_07 y -0.7568
+                /display/set/contours surfaces plane_x_07 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_07.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_07.png"
+                /surface/delete plane_x_07
+                
+                ; --- Image 9/45 at x = -0.6864 ---
+                /surface/plane-surface plane_x_08 y -0.6864
+                /display/set/contours surfaces plane_x_08 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_08.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_08.png"
+                /surface/delete plane_x_08
+                
+                ; --- Image 10/45 at x = -0.6159 ---
+                /surface/plane-surface plane_x_09 y -0.6159
+                /display/set/contours surfaces plane_x_09 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_09.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_09.png"
+                /surface/delete plane_x_09
+                
+                ; --- Image 11/45 at x = -0.5455 ---
+                /surface/plane-surface plane_x_10 y -0.5455
+                /display/set/contours surfaces plane_x_10 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_10.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_10.png"
+                /surface/delete plane_x_10
+                
+                ; --- Image 12/45 at x = -0.4750 ---
+                /surface/plane-surface plane_x_11 y -0.4750
+                /display/set/contours surfaces plane_x_11 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_11.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_11.png"
+                /surface/delete plane_x_11
+                
+                ; --- Image 13/45 at x = -0.4045 ---
+                /surface/plane-surface plane_x_12 y -0.4045
+                /display/set/contours surfaces plane_x_12 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_12.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_12.png"
+                /surface/delete plane_x_12
+                
+                ; --- Image 14/45 at x = -0.3341 ---
+                /surface/plane-surface plane_x_13 y -0.3341
+                /display/set/contours surfaces plane_x_13 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_13.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_13.png"
+                /surface/delete plane_x_13
+                
+                ; --- Image 15/45 at x = -0.2636 ---
+                /surface/plane-surface plane_x_14 y -0.2636
+                /display/set/contours surfaces plane_x_14 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_14.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_14.png"
+                /surface/delete plane_x_14
+                
+                ; --- Image 16/45 at x = -0.1932 ---
+                /surface/plane-surface plane_x_15 y -0.1932
+                /display/set/contours surfaces plane_x_15 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_15.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_15.png"
+                /surface/delete plane_x_15
+                
+                ; --- Image 17/45 at x = -0.1227 ---
+                /surface/plane-surface plane_x_16 y -0.1227
+                /display/set/contours surfaces plane_x_16 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_16.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_16.png"
+                /surface/delete plane_x_16
+                
+                ; --- Image 18/45 at x = -0.0523 ---
+                /surface/plane-surface plane_x_17 y -0.0523
+                /display/set/contours surfaces plane_x_17 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_17.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_17.png"
+                /surface/delete plane_x_17
+                
+                ; --- Image 19/45 at x = 0.0182 ---
+                /surface/plane-surface plane_x_18 y 0.0182
+                /display/set/contours surfaces plane_x_18 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_18.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_18.png"
+                /surface/delete plane_x_18
+                
+                ; --- Image 20/45 at x = 0.0886 ---
+                /surface/plane-surface plane_x_19 y 0.0886
+                /display/set/contours surfaces plane_x_19 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_19.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_19.png"
+                /surface/delete plane_x_19
+                
+                ; --- Image 21/45 at x = 0.1591 ---
+                /surface/plane-surface plane_x_20 y 0.1591
+                /display/set/contours surfaces plane_x_20 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_20.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_20.png"
+                /surface/delete plane_x_20
+                
+                ; --- Image 22/45 at x = 0.2295 ---
+                /surface/plane-surface plane_x_21 y 0.2295
+                /display/set/contours surfaces plane_x_21 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_21.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_21.png"
+                /surface/delete plane_x_21
+                
+                ; --- Image 23/45 at x = 0.3000 ---
+                /surface/plane-surface plane_x_22 y 0.3000
+                /display/set/contours surfaces plane_x_22 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_22.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_22.png"
+                /surface/delete plane_x_22
+                
+                ; --- Image 24/45 at x = 0.3705 ---
+                /surface/plane-surface plane_x_23 y 0.3705
+                /display/set/contours surfaces plane_x_23 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_23.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_23.png"
+                /surface/delete plane_x_23
+                
+                ; --- Image 25/45 at x = 0.4409 ---
+                /surface/plane-surface plane_x_24 y 0.4409
+                /display/set/contours surfaces plane_x_24 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_24.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_24.png"
+                /surface/delete plane_x_24
+                
+                ; --- Image 26/45 at x = 0.5114 ---
+                /surface/plane-surface plane_x_25 y 0.5114
+                /display/set/contours surfaces plane_x_25 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_25.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_25.png"
+                /surface/delete plane_x_25
+                
+                ; --- Image 27/45 at x = 0.5818 ---
+                /surface/plane-surface plane_x_26 y 0.5818
+                /display/set/contours surfaces plane_x_26 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_26.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_26.png"
+                /surface/delete plane_x_26
+                
+                ; --- Image 28/45 at x = 0.6523 ---
+                /surface/plane-surface plane_x_27 y 0.6523
+                /display/set/contours surfaces plane_x_27 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_27.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_27.png"
+                /surface/delete plane_x_27
+                
+                ; --- Image 29/45 at x = 0.7227 ---
+                /surface/plane-surface plane_x_28 y 0.7227
+                /display/set/contours surfaces plane_x_28 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_28.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_28.png"
+                /surface/delete plane_x_28
+                
+                ; --- Image 30/45 at x = 0.7932 ---
+                /surface/plane-surface plane_x_29 y 0.7932
+                /display/set/contours surfaces plane_x_29 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_29.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_29.png"
+                /surface/delete plane_x_29
+                
+                ; --- Image 31/45 at x = 0.8636 ---
+                /surface/plane-surface plane_x_30 y 0.8636
+                /display/set/contours surfaces plane_x_30 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_30.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_30.png"
+                /surface/delete plane_x_30
+                
+                ; --- Image 32/45 at x = 0.9341 ---
+                /surface/plane-surface plane_x_31 y 0.9341
+                /display/set/contours surfaces plane_x_31 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_31.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_31.png"
+                /surface/delete plane_x_31
+                
+                ; --- Image 33/45 at x = 1.0045 ---
+                /surface/plane-surface plane_x_32 y 1.0045
+                /display/set/contours surfaces plane_x_32 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_32.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_32.png"
+                /surface/delete plane_x_32
+                
+                ; --- Image 34/45 at x = 1.0750 ---
+                /surface/plane-surface plane_x_33 y 1.0750
+                /display/set/contours surfaces plane_x_33 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_33.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_33.png"
+                /surface/delete plane_x_33
+                
+                ; --- Image 35/45 at x = 1.1455 ---
+                /surface/plane-surface plane_x_34 y 1.1455
+                /display/set/contours surfaces plane_x_34 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_34.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_34.png"
+                /surface/delete plane_x_34
+                
+                ; --- Image 36/45 at x = 1.2159 ---
+                /surface/plane-surface plane_x_35 y 1.2159
+                /display/set/contours surfaces plane_x_35 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_35.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_35.png"
+                /surface/delete plane_x_35
+                
+                ; --- Image 37/45 at x = 1.2864 ---
+                /surface/plane-surface plane_x_36 y 1.2864
+                /display/set/contours surfaces plane_x_36 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_36.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_36.png"
+                /surface/delete plane_x_36
+                
+                ; --- Image 38/45 at x = 1.3568 ---
+                /surface/plane-surface plane_x_37 y 1.3568
+                /display/set/contours surfaces plane_x_37 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_37.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_37.png"
+                /surface/delete plane_x_37
+                
+                ; --- Image 39/45 at x = 1.4273 ---
+                /surface/plane-surface plane_x_38 y 1.4273
+                /display/set/contours surfaces plane_x_38 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_38.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_38.png"
+                /surface/delete plane_x_38
+                
+                ; --- Image 40/45 at x = 1.4977 ---
+                /surface/plane-surface plane_x_39 y 1.4977
+                /display/set/contours surfaces plane_x_39 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_39.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_39.png"
+                /surface/delete plane_x_39
+                
+                ; --- Image 41/45 at x = 1.5682 ---
+                /surface/plane-surface plane_x_40 y 1.5682
+                /display/set/contours surfaces plane_x_40 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_40.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_40.png"
+                /surface/delete plane_x_40
+                
+                ; --- Image 42/45 at x = 1.6386 ---
+                /surface/plane-surface plane_x_41 y 1.6386
+                /display/set/contours surfaces plane_x_41 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_41.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_41.png"
+                /surface/delete plane_x_41
+                
+                ; --- Image 43/45 at x = 1.7091 ---
+                /surface/plane-surface plane_x_42 y 1.7091
+                /display/set/contours surfaces plane_x_42 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_42.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_42.png"
+                /surface/delete plane_x_42
+                
+                ; --- Image 44/45 at x = 1.7795 ---
+                /surface/plane-surface plane_x_43 y 1.7795
+                /display/set/contours surfaces plane_x_43 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_43.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_43.png"
+                /surface/delete plane_x_43
+                
+                ; --- Image 45/45 at x = 1.8500 ---
+                /surface/plane-surface plane_x_44 y 1.8500
+                /display/set/contours surfaces plane_x_44 ()
+                /display/contour/velocity-magnitude 0 35
+                /display/save-picture "Processed/Images/front_vel/front_vel_44.png"
+                /display/contour/total-pressure -300 300
+                /display/save-picture "Processed/Images/front_pressure/front_pressure_44.png"
+                /surface/delete plane_x_44
+                
+/exit yes
