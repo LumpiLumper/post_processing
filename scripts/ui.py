@@ -5,7 +5,7 @@ from tkinter import filedialog
 from pathlib import Path
 from PIL import Image, ImageTk
 
-from fluent_processing import FluentPostProcesser
+from scripts.fluent_processing import FluentPostProcesser
 
 class FluentProcessingUI():
     def __init__(self):

@@ -12,7 +12,7 @@ import shutil
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from ui import FluentProcessingUI
+    from scripts.ui import FluentProcessingUI
 
 
 rows: int = [11,    # Drag Frontwing
