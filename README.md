@@ -16,6 +16,7 @@ git clone https://github.com/LumpiLumper/post_processing.git
 ### 2. Create Virtual enviorment
 make a virtual python envirement by running the following command in the same location where you ran -git clone...
 ```bash
+cd post_processing
 python -m venv .venv
 ```
 this will create a folder named venv in the same folder where \data and \scripts are. Depending on your python version 
