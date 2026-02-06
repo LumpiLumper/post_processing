@@ -46,4 +46,4 @@ make sure your venv is activated before you run this command (it will say (venv)
 pip install -r data\requirements.txt
 ```
 ### 4. Run Programm
-Now you can run the program by running a command in the 
+Now you can run the program by double clicking the post_processing.bat file
