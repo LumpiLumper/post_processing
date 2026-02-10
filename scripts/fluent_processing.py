@@ -14,30 +14,6 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from scripts.ui import FluentProcessingUI
 
-
-rows: int = [11,    # Drag Frontwing
-             12,    # Drag Sidepod
-             13,    # Drag Rearwing
-             15,    # Drag Net
-             11,    # Df Frontwing
-             12,    # Df Sidepod
-             13,    # Df Rearwing
-             15,    # Df Net
-             18     # Moment around front axis
-             ]
-
-cols: int = [3,     # Drag Frontwing
-             3,     # Drag Sidepod
-             3,     # Drag Rearwing
-             3,     # Drag Net
-             8,     # Df Frontwing
-             8,     # Df Sidepod
-             8,     # Df Rearwing
-             8,     # Df Net
-             8      # Moment around front axis
-             ]
-
-
 class FluentPostProcesser():
     def __init__(self, fluent_exe_path: Path, case_folder_path: Path, ui: FluentProcessingUI):
         self.fluent_exe_path = fluent_exe_path
@@ -318,14 +294,14 @@ class FluentPostProcesser():
                  Downforce Net,
                  Moment around front axis]
         '''
-        force_sheet_index = pd.read_csv(r"data\force_sheet_index.csv", index_col=0)
-        print(force_sheet_index)
-        assert len(self.forces) == len(rows) == len(cols)
+        force_sheet_index = pd.read_csv(r"data\aero force sheet idx.csv")
+
+        assert len(self.forces) == len(force_sheet_index["rows"])
 
         assert self.force_sheet["A1"].value == "v1.0"
 
-        for i, row in enumerate(rows):
-            self.force_sheet.cell(row=rows[i], column=cols[i], value=self.forces[i])
+        for i, row in enumerate(force_sheet_index["rows"]):
+            self.force_sheet.cell(row=row, column=force_sheet_index.iloc[i, 2], value=self.forces[i])
         
         self.force_book.save(self.forces_dir / "aero force sheet.xlsx")
         print(f"Forces saved in: {self.forces_dir}"+r"\aero force sheet.xlsx")
