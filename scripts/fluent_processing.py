@@ -233,6 +233,14 @@ class FluentPostProcesser():
             sep=r"\s+",         # 1 ou plusieurs espaces comme séparateur
             engine="python"     # nécessaire pour les regex
             )  
+        
+        moment = pd.read_csv(
+            self.work_dir / "moment",
+            skiprows=16,
+            sep=r"\s+",
+            engine="python",
+            on_bad_lines="skip",
+            )
 
         df_list = pd.to_numeric(df["Total"], errors="coerce").tolist()
         drag_list = pd.to_numeric(drag["Total"], errors="coerce").tolist()
@@ -262,7 +270,7 @@ class FluentPostProcesser():
         df_ch = float(df_list[idx["chassis"]])
         df_net = df_fw + df_sp + df_rw + df_rwh + df_fwh + df_ch
 
-        moment_idx = None  # ex: 8
+        moment_idx = 7  # ex: 8
         moment = float(df_list[moment_idx]) if moment_idx is not None else 0.0
 
         self.forces = [
@@ -297,6 +305,8 @@ class FluentPostProcesser():
                  Downforce Net,
                  Moment around front axis]
         '''
+        force_sheet_index = pd.read_csv(r"data\force_sheet_index.csv", index_col=0)
+        print(force_sheet_index)
         assert len(self.forces) == len(rows) == len(cols)
 
         assert self.force_sheet["A1"].value == "v1.0"
@@ -306,3 +316,4 @@ class FluentPostProcesser():
         
         self.force_book.save(self.forces_dir / "aero force sheet.xlsx")
         print(f"Forces saved in: {self.forces_dir}"+r"\aero force sheet.xlsx")
+
