@@ -61,6 +61,10 @@ class FluentPostProcesser():
         self.side_vel_dir.mkdir(parents=True, exist_ok=True)
         self.side_pr_dir = self.images_dir / "side_pressure"
         self.side_pr_dir.mkdir(parents=True, exist_ok=True)
+        self.side_heli_dir = self.images_dir / "side_heli"
+        self.side_heli_dir.mkdir(parents=True, exist_ok=True)
+        self.front_heli_dir = self.images_dir / "front_heli"
+        self.front_heli_dir.mkdir(parents=True, exist_ok=True)
         self.forces_dir = self.out_dir / "forces"
         self.forces_dir.mkdir(parents=True, exist_ok=True)
 
@@ -83,10 +87,13 @@ class FluentPostProcesser():
             /file/set-batch-options no yes yes no
             /display/set-window 1
             /views/camera/projection orthographic
+            /display/set/contours filled yes
+            /display/set/contours clip-to-range no
             /views/apply-mirror-planes symmetry ()
             
-            /report/forces/wall-forces yes 0 0 1 yes df.csv
-            /report/forces/wall-forces yes 1 0 0 yes drag.csv
+            /report/forces/wall-forces yes 0 0 1 yes df.csv no
+            /report/forces/wall-forces yes 1 0 0 yes drag.csv no
+            /report/forces/wall-moments no front-wing front-wheel rear-wing rear-wheel sidepod chassis () 0.7655 0.7375 0.200699 0 1 0 yes moment no
 
             /display/surface/iso-surface velocity velo_iso () () 5 ()
             /display/set/contours surfaces velo_iso ()
@@ -108,6 +115,7 @@ class FluentPostProcesser():
             s_name = f"plane_z_{i:02d}"
             img_vel = f"Processed/Images/side_vel/side_vel_{i:02d}.png"
             img_pressure = f"Processed/Images/side_pressure/side_pressure_{i:02d}.png"
+            img_heli = f"Processed/Images/side_heli/side_heli_{i:02d}.png"
             
             jou_content += f"""
                 ; --- Image {i+1}/{num_images_y} at Z = {z:.4f} ---
@@ -117,6 +125,8 @@ class FluentPostProcesser():
                 /display/save-picture "{img_vel}"
                 /display/contour/total-pressure -300 350
                 /display/save-picture "{img_pressure}"
+                /display/contour/helicity -10000 10000
+                /display/save-picture "{img_heli}"
                 /surface/delete {s_name}
                 """
 
@@ -144,6 +154,8 @@ class FluentPostProcesser():
                 /display/save-picture "{img_vel}"
                 /display/contour/total-pressure -300 300
                 /display/save-picture "{img_pressure}"
+                /display/contour/helicity -10000 10000
+                /display/save-picture "{img_heli}"
                 /surface/delete {s_name}
                 """
             
@@ -232,7 +244,16 @@ class FluentPostProcesser():
             skiprows=19,        # ignore les 19 premières lignes
             sep=r"\s+",         # 1 ou plusieurs espaces comme séparateur
             engine="python"     # nécessaire pour les regex
-            )  
+            )
+        
+        moment = pd.read_csv(
+            self.work_dir / "moment",
+            skiprows=16,
+            sep=r"\s+",
+            engine="python",
+            on_bad_lines="skip",
+            )
+        
 
         df_list = pd.to_numeric(df["Total"], errors="coerce").tolist()
         drag_list = pd.to_numeric(drag["Total"], errors="coerce").tolist()
@@ -262,8 +283,8 @@ class FluentPostProcesser():
         df_ch = float(df_list[idx["chassis"]])
         df_net = df_fw + df_sp + df_rw + df_rwh + df_fwh + df_ch
 
-        moment_idx = None  # ex: 8
-        moment = float(df_list[moment_idx]) if moment_idx is not None else 0.0
+        moment_net = float(moment["Total"][7])
+
 
         self.forces = [
         drag_fw,
@@ -274,7 +295,7 @@ class FluentPostProcesser():
         df_sp,
         df_rw,
         df_net,
-        moment
+        moment_net
         ]
         print(self.forces)
         self.write_to_forcesheet()
