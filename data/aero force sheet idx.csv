@@ -1,0 +1,10 @@
+area,		rows,	cols
+Drag Frontwing,	11,	3,
+Drag Sidepod,	12,	3,
+Drag Rearwing,	13,	3,
+Drag Net,	15,	3,
+Df Frontwing,	11,	8,
+Df Sidepod,	12,	8,
+Df Rearwing,	13,	8,
+Df Net,		15,	8,
+Moment,		18,	8,

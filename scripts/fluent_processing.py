@@ -318,6 +318,8 @@ class FluentPostProcesser():
                  Downforce Net,
                  Moment around front axis]
         '''
+        force_sheet_index = pd.read_csv(r"data\force_sheet_index.csv", index_col=0)
+        print(force_sheet_index)
         assert len(self.forces) == len(rows) == len(cols)
 
         assert self.force_sheet["A1"].value == "v1.0"
@@ -327,3 +329,4 @@ class FluentPostProcesser():
         
         self.force_book.save(self.forces_dir / "aero force sheet.xlsx")
         print(f"Forces saved in: {self.forces_dir}"+r"\aero force sheet.xlsx")
+
