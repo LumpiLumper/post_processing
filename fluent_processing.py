@@ -294,7 +294,7 @@ class FluentPostProcesser():
         df_sp,
         df_rw,
         df_net,
-        moment
+        moment_net
         ]
         print(self.forces)
         self.write_to_forcesheet()
