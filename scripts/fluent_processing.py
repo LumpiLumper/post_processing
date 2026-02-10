@@ -121,6 +121,7 @@ class FluentPostProcesser():
             s_name = f"plane_x_{i:02d}"
             img_vel = f"Processed/Images/front_vel/front_vel_{i:02d}.png"
             img_pressure = f"Processed/Images/front_pressure/front_pressure_{i:02d}.png"
+            img_heli = f"Processed/Images/front_heli/front_heli_{i:02d}.png"
         
             
             jou_content += f"""
