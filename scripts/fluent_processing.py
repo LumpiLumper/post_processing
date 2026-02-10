@@ -91,9 +91,9 @@ class FluentPostProcesser():
             /display/set/contours clip-to-range no
             /views/apply-mirror-planes symmetry ()
             
-            /report/forces/wall-forces yes 0 0 1 yes df.csv no
-            /report/forces/wall-forces yes 1 0 0 yes drag.csv no
-            /report/forces/wall-moments no front-wing front-wheel rear-wing rear-wheel sidepod chassis () 0.7655 0.7375 0.200699 0 1 0 yes moment no
+            /report/forces/wall-forces yes 0 0 1 yes df.csv
+            /report/forces/wall-forces yes 1 0 0 yes drag.csv
+            /report/forces/wall-moments no front-wing front-wheel rear-wing rear-wheel sidepod chassis () 0.7655 0.7375 0.200699 0 1 0 yes moment
 
             /display/surface/iso-surface velocity velo_iso () () 5 ()
             /display/set/contours surfaces velo_iso ()
