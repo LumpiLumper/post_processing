@@ -70,7 +70,7 @@ class FluentPostProcesser():
             
             /report/forces/wall-forces yes 0 0 1 yes df.csv
             /report/forces/wall-forces yes 1 0 0 yes drag.csv
-            /report/forces/wall-moments no front-wing front-wheel rear-wing rear-wheel sidepod chassis () 0.7655 0.7375 0.200699 0 1 0 yes moment
+            /report/forces/wall-moments no front-wing front-wheel rear-wing rear-wheel sidepod chassis () 0.7655 0.7375 0.200699 0 1 0 yes moment.csv
 
             /display/surface/iso-surface velocity velo_iso () () 5 ()
             /display/set/contours surfaces velo_iso ()
@@ -181,6 +181,7 @@ class FluentPostProcesser():
         rc = proc.wait()
         if rc == 0:
             print(f"\n Images saved in: {self.out_dir}")
+            print(f"\nLenght of jou file: {n_lines}")
         else:
             print(f"\n Error occoured in process: (Code {rc})")
 
@@ -209,6 +210,12 @@ class FluentPostProcesser():
             os.remove(source)
         except:
             print("Couldn't find drag.csv")
+        source = self.work_dir / "moment.csv"
+        try:
+            shutil.copy2(source, destination)
+            os.remove(source)
+        except:
+            print("Couldn't find moment.csv")
 
         df = pd.read_csv(
             self.forces_dir / "df.csv",
@@ -225,7 +232,7 @@ class FluentPostProcesser():
             )
         
         moment = pd.read_csv(
-            self.work_dir / "moment",
+            self.forces_dir / "moment.csv",     # chemin vers ton fichier
             skiprows=16,
             sep=r"\s+",
             engine="python",
@@ -297,6 +304,7 @@ class FluentPostProcesser():
                  Moment around front axis]
         '''
         force_sheet_index = pd.read_csv(r"data\aero force sheet idx.csv")
+        force_sheet_index.columns = force_sheet_index.columns.str.strip()
 
         assert len(self.forces) == len(force_sheet_index["rows"])
 
