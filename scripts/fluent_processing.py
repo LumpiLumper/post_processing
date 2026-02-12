@@ -9,17 +9,25 @@ from pathlib import Path
 from openpyxl import load_workbook
 import pandas as pd
 import shutil
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Callable, Optional
 
 if TYPE_CHECKING:
     from scripts.ui import FluentProcessingUI
+    from scripts.gui_v2 import AddSimulationWindow
 
 class FluentPostProcesser():
-    def __init__(self, fluent_exe_path: Path, case_folder_path: Path, ui: FluentProcessingUI):
+    def __init__(self, fluent_exe_path: Path, 
+                 case_file_path: Path, 
+                 callback: Optional[Callable[[int], None]] = None):
         self.fluent_exe_path = fluent_exe_path
-        self.ui = ui
-        self.create_folder_struct(case_folder_path)
+        self.progress_callback = callback
+        self.create_folder_struct(case_file_path.parent)
         self.progress_flag = False
+
+    def run(self):
+        self.create_jou_content()
+        self.run_jou_file()
+        self.get_excel_data()
 
     def create_folder_struct(self, case_folder_path):
         self.work_dir = Path(case_folder_path)
@@ -59,7 +67,7 @@ class FluentPostProcesser():
         
 
 
-        jou_content = f"""; 2047
+        jou_content = f"""; 2344
             /file/read-case-data "{self.case_file_path.as_posix()}"
             /file/set-batch-options no yes yes no
             /display/set-window 1
@@ -163,7 +171,9 @@ class FluentPostProcesser():
             )
         assert proc.stdout is not None
         try:
+            update_counter = 0
             for line_counter, line in enumerate(proc.stdout):
+                update_counter += 1
                 if line_counter == 0:
                     self.jou_progress(n_lines, line_counter)
                     continue
@@ -181,7 +191,7 @@ class FluentPostProcesser():
         rc = proc.wait()
         if rc == 0:
             print(f"\n Images saved in: {self.out_dir}")
-            print(f"\nLenght of jou file: {n_lines}")
+            print(f"\nLenght of jou file: {update_counter} lines")
         else:
             print(f"\n Error occoured in process: (Code {rc})")
 
@@ -194,7 +204,7 @@ class FluentPostProcesser():
             self.progress_old = self.progress
         self.progress = round(line_counter/n_lines * 100)
         if self.progress != self.progress_old:
-            self.ui.show_progress(self.progress)
+            self.progress_callback(self.progress)
             
     def get_excel_data(self):
         source = self.work_dir / "df.csv"
