@@ -382,8 +382,3 @@ class MainWindow(QMainWindow):
             print("Selected simulation file:", file_path)
             self.add_simulation_window = AddSimulationWindow(Path(file_path), Path(self.fluent_exe_path))
         
-
-app = QApplication(sys.argv)
-main_window = MainWindow()
-
-app.exec()

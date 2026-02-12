@@ -1,8 +1,11 @@
 
-from pathlib import Path
-
+import sys
+from PyQt6.QtWidgets import QApplication
 from scripts.ui import FluentProcessingUI
 
-fluent_exe_path = Path(r"C:\Program Files\ANSYS Inc\v232\fluent\ntbin\win64\fluent.exe")
+from scripts.gui_v2 import MainWindow
 
-fluent_processing_ui = FluentProcessingUI()
+app = QApplication(sys.argv)
+main_window = MainWindow()
+
+app.exec()
