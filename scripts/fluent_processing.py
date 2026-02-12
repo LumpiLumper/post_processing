@@ -60,8 +60,8 @@ class FluentPostProcesser():
         num_images_x = 45
         z_positions = np.linspace(start_z, end_z, num_images_y)
 
-        start_x = -1.250
-        end_x = 1.850 
+        start_x = 1.850
+        end_x = -1.250 
         x_positions = np.linspace(start_x, end_x, num_images_x)
         # --- creating jou content ---ok
         
